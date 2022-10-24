@@ -126,3 +126,19 @@ el line-height acá también debería aumentar al mismo valor.
   #Eterno-monarca{
     display: none;
   }  
+.portadas{
+  margin-top: 70px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+}
+.portadas a {
+  transition: transform .3s;  
+}
+
+.portadas a:hover {
+  transition: transform .3s;
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);  
+  transform: scale(1.05);
+}

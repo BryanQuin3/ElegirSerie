@@ -1,7 +1,7 @@
 // id de la hoja de calculo
 const SHEET_ID = "1Fne3wMWxCGu0ysGsyHx6XfSZhfzb-vnKCnPS_vT0ktE";
 const ACCESS_TOKEN =
-  "ya29.a0Aa4xrXMJTRNVaI5MVhgOpExfLKJIvSjvBm-5SbuQLNKJ3V2y5Yim8u02UP_Jp-mhO53JGW6DCrlnkTPVjoK_6Qj_Va_UjpjgFa0mT1i6cv2P6JjRKKouvL21FRRoyMJqz0Qh_ZRNiffplEftNKZubsvjuqQvaCgYKATASARMSFQEjDvL91sUXx_zX6WsONS6OKNjFdA0163";
+  "ya29.a0Aa4xrXMWKQxtLwxlhqgUTuG0F-i3SmYJ2roc3OhIguuS0TLeW0F7aLKQegEbsKRtzow5-QfY7RTNovLyL5kRccNMZz4veBv_ARWWTWGlQUtoLRxcokw7j7TE2oDGmmKuQvYww_C1q5QAgUr_fSV0SVSIj7u4aCgYKATASARMSFQEjDvL9NP676Oy4e6L3kj9YWDWjUQ0163";
 
 const filtros = document.getElementById('filtros');
 let contador = 0;
@@ -59,6 +59,7 @@ function onObtenerSerie() {
       lista.appendChild(series);
       //muestra la imagen de la serie correspondiente
       serieRandom = stringNombreSerie.replace(/ /g, '-');
+      document.getElementById("portadas").style.display = "none";
       document.getElementById(serieRandom).style.display = "block";
 
     });
