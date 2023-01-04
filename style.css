@@ -1,38 +1,139 @@
-
+/* CSS VARIABLES */
 :root {
-    --colorFondo: #141414;
-    --colorLetra: #F3F3F3;
-    --fuente: 'Roboto', sans-serif;
-}
-img{
-  max-width: 100%;
-}
-a{
-  text-decoration: none;
-}
-body {
-    /* Aplica a todo el body*/
-    background-color: #141414;
-    font-family: var(--fuente);
-    color: #141414;
-}
-
-h1 {
-    margin-top: 2rem;
+    --primary: #141414;
+    --light: #F3F3F3;
+    --dark: 	#686868;
+  }
+  
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.4;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  h1 {
+    padding-top: 30px; 
+    margin-bottom: 0;
     text-align: center;
-    font-size: 45px;
+    font-size: 4.6rem;
     background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-   
-    
+    -webkit-text-fill-color: transparent;   
+  }
+  h2{
+    margin-left: 15px;
+  }
+  a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+  #contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .button {
+    font-family: var(--fuente);
+    background: linear-gradient(90deg, #aa0c7b 0%, #ac00fc 100%);
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    line-height: 5px;
+    width: 110px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #dbe7e7;
 }
 
-.serie-item {
-    margin-top:5%;
-    height: 2rem;
-    border-radius: 10px;
+   
+  
+  .box {
+    display: grid;
+    place-items: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+  
+  .box a {
+    transition: transform .3s;  
+  }
+  
+  .box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);  
+    transform: scale(1.05);
+  }
+  
+  
+  /* FOOTER */
+  footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--dark);
+    margin: 10px;
+  }
+
+  @media(max-width: 700px) {
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+    h2{
+        text-align: center;
+        margin-left: 0;
+    }
+  }
+  
+  @media(max-width: 500px) {
+
+    h1 {
+      text-align: center;
+      font-size: 45px;
+    }
+    h2{
+        text-align: center;
+        margin-left: 0;
+    }
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;    
+    }
+  
+    .box a:hover {
+      transition: transform .3s;
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);  
+      transform: scale(1.2);
+    }
+    .button{
+        width: 70px;
+        padding: 12px;
+        margin-top: 10px;
+    }
+  }
+  .serie-item {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+    height: 3rem;
+    border-radius: 1rem;
     max-width: 100%;
     color: var(--colorLetra);
     background: linear-gradient(90deg, #aa0c7b 0%, #ac00fc 100%);
@@ -62,47 +163,9 @@ el line-height acá también debería aumentar al mismo valor.
     margin: auto;
     /* con esto se logra que este centrado horizontalmente */
     width: 70%;
-    font-size: 17px;
+    font-size: 1.7rem;
     font-weight: 600;
 }
-  .button {
-    font-family: var(--fuente);
-    background: linear-gradient(90deg, #aa0c7b 0%, #ac00fc 100%);
-    position: relative;
-    padding: 20px;
-    text-align: center;
-    line-height: 5px;
-    width: 70px;
-    border-radius: 7px;
-    cursor: pointer;
-    color: #dbe7e7;
-}
-#contenedor{
-  display: flex;
-  justify-content: center;
-  
-}
-
-.box {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-  }
-  .box a {
-    transition: transform .3s;  
-  }
-  
-  .box a:hover {
-    transition: transform .3s;
-    -ms-transform: scale(1.05);
-    -webkit-transform: scale(1.05);  
-    transform: scale(1.05);
-  }
-  
-  .box img {
-    border-radius: 5px;
-  }
-
 
   #La-Casa-de-Papel{
     display: none;
@@ -132,33 +195,22 @@ el line-height acá también debería aumentar al mismo valor.
     display: none;
   } 
 
-.portadas{
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  justify-items: center;
-  gap: 20px;
-  width: 100%;
-}
-
-
-@media (min-width: 1000px) {
-  .portadas{
-    margin-top: 70px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    justify-items: center;
-    gap: 20px;
+  .portada {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
   }
-}
-.portadas a {
-  transition: transform .3s;  
-}
-
-.portadas a:hover {
-  transition: transform .3s;
-  -ms-transform: scale(1.05);
-  -webkit-transform: scale(1.05);  
-  transform: scale(1.05);
-}
-
+  .portada a {
+    transition: transform .3s;  
+  }
+  
+  .portada a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);  
+    transform: scale(1.1);
+  }
+  
+  .portada img {
+    border-radius: 0.5rem;
+  }
